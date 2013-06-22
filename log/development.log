@@ -20074,3 +20074,386 @@ Served asset /champions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-22 02:05:41 +0100
 Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-22 11:20:12 +0100
+Processing by ChampionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mChampion Load (0.3ms)[0m  SELECT "champions".* FROM "champions" ORDER BY name ASC
+  Rendered champions/index.html.haml within layouts/application (45.9ms)
+  Rendered layouts/_navigation.html.haml (3.0ms)
+  Rendered layouts/_messages.html.haml (1.5ms)
+Completed 200 OK in 875ms (Views: 801.2ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-22 11:20:13 +0100
+Served asset /application.css - 200 OK (28ms)
+
+
+Started GET "/assets/_variables.css?body=1" for 127.0.0.1 at 2013-06-22 11:20:13 +0100
+Served asset /_variables.css - 200 OK (8ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-06-22 11:20:13 +0100
+Served asset /bootstrap.css - 200 OK (54ms)
+
+
+Started GET "/assets/bootstrap_and_overriders.css?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap_and_overriders.css - 200 OK (65ms)
+
+
+Started GET "/assets/champions.css?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /champions.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /style.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /jquery_ujs.js - 200 OK (6ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-transition.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-affix.js - 200 OK (57ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-button.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-carousel.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-alert.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-dropdown.js - 200 OK (17ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-collapse.js - 200 OK (31ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-modal.js - 200 OK (12ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-scrollspy.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:14 +0100
+Served asset /bootstrap-tab.js - 200 OK (4ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:15 +0100
+Served asset /bootstrap-tooltip.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:15 +0100
+Served asset /bootstrap-popover.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:15 +0100
+Served asset /bootstrap-typeahead.js - 200 OK (53ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:15 +0100
+Served asset /bootstrap.js - 200 OK (32ms)
+
+
+Started GET "/assets/champions.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:15 +0100
+Served asset /champions.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-22 11:20:15 +0100
+Served asset /application.js - 200 OK (23ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-06-22 11:20:17 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hJjnDmeiaNhpdQAADG7We7HU0BS9jd84gTxbSC2N8xM="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:4567/
+Completed 302 Found in 74ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-22 11:20:17 +0100
+Processing by ChampionsController#index as HTML
+Completed 401 Unauthorized in 4ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-06-22 11:20:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/shared/_links.erb (3.1ms)
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/sessions/new.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 118ms (Views: 112.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-06-22 11:20:33 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1R7yuEA4VaeJE72yZrZVzMWWqaGDkVRPqX8WLwVRpZo=", "user"=>{"email"=>"vidadelaempresa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'vidadelaempresa@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2013-06-22 10:20:33.566017', "sign_in_count" = 2, "updated_at" = '2013-06-22 10:20:33.577718' WHERE "users"."id" = 1
+  [1m[36m (16.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:4567/
+Completed 302 Found in 170ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-22 11:20:33 +0100
+Processing by ChampionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mChampion Load (0.4ms)[0m  [1mSELECT "champions".* FROM "champions" ORDER BY name ASC[0m
+  Rendered champions/index.html.haml within layouts/application (18.9ms)
+  Rendered layouts/_navigation.html.haml (0.6ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 70ms (Views: 66.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/champions/new" for 127.0.0.1 at 2013-06-22 11:20:36 +0100
+Processing by ChampionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered champions/_form.html.erb (5.4ms)
+  Rendered champions/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navigation.html.haml (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 80ms (Views: 76.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/champions" for 127.0.0.1 at 2013-06-22 11:21:14 +0100
+Processing by ChampionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mChampion Load (0.3ms)[0m  SELECT "champions".* FROM "champions" ORDER BY name ASC
+  Rendered champions/index.html.haml within layouts/application (14.8ms)
+  Rendered layouts/_navigation.html.haml (2.9ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/champions/new" for 127.0.0.1 at 2013-06-22 11:21:25 +0100
+Processing by ChampionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered champions/_form.html.erb (3.3ms)
+  Rendered champions/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_navigation.html.haml (0.9ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/champions" for 127.0.0.1 at 2013-06-22 11:21:34 +0100
+Processing by ChampionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1R7yuEA4VaeJE72yZrZVzMWWqaGDkVRPqX8WLwVRpZo=", "champion"=>{"name"=>"Graves", "image"=>"http://euw.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/104.jpg", "lane"=>"Bot"}, "commit"=>"Create Champion"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "champions" ("created_at", "image", "lane", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 22 Jun 2013 10:21:34 UTC +00:00], ["image", "http://euw.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/104.jpg"], ["lane", "Bot"], ["name", "Graves"], ["updated_at", Sat, 22 Jun 2013 10:21:34 UTC +00:00], ["user_id", nil]]
+  [1m[36m (41.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:4567/champions/29
+Completed 302 Found in 59ms (ActiveRecord: 42.2ms)
+
+
+Started GET "/champions/29" for 127.0.0.1 at 2013-06-22 11:21:34 +0100
+Processing by ChampionsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mChampion Load (0.2ms)[0m  [1mSELECT "champions".* FROM "champions" WHERE "champions"."id" = ? ORDER BY name ASC LIMIT 1[0m  [["id", "29"]]
+  Rendered champions/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation.html.haml (0.7ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 92ms (Views: 88.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/champions" for 127.0.0.1 at 2013-06-22 11:21:36 +0100
+Processing by ChampionsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mChampion Load (1.3ms)[0m  [1mSELECT "champions".* FROM "champions" ORDER BY name ASC[0m
+  Rendered champions/index.html.haml within layouts/application (32.3ms)
+  Rendered layouts/_navigation.html.haml (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 91ms (Views: 85.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/champions/new" for 127.0.0.1 at 2013-06-22 11:21:40 +0100
+Processing by ChampionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered champions/_form.html.erb (3.6ms)
+  Rendered champions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_navigation.html.haml (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 68ms (Views: 65.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/champions" for 127.0.0.1 at 2013-06-22 11:23:11 +0100
+Processing by ChampionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1R7yuEA4VaeJE72yZrZVzMWWqaGDkVRPqX8WLwVRpZo=", "champion"=>{"name"=>"Hecarim", "image"=>"http://euw.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/120.jpg", "lane"=>"Jungle"}, "commit"=>"Create Champion"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "champions" ("created_at", "image", "lane", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 22 Jun 2013 10:23:11 UTC +00:00], ["image", "http://euw.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/120.jpg"], ["lane", "Jungle"], ["name", "Hecarim"], ["updated_at", Sat, 22 Jun 2013 10:23:11 UTC +00:00], ["user_id", nil]]
+  [1m[35m (41.0ms)[0m  commit transaction
+Redirected to http://localhost:4567/champions/30
+Completed 302 Found in 52ms (ActiveRecord: 41.6ms)
+
+
+Started GET "/champions/30" for 127.0.0.1 at 2013-06-22 11:23:11 +0100
+Processing by ChampionsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mChampion Load (0.1ms)[0m  SELECT "champions".* FROM "champions" WHERE "champions"."id" = ? ORDER BY name ASC LIMIT 1  [["id", "30"]]
+  Rendered champions/show.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navigation.html.haml (2.4ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 82ms (Views: 80.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/champions" for 127.0.0.1 at 2013-06-22 11:23:13 +0100
+Processing by ChampionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mChampion Load (0.5ms)[0m  SELECT "champions".* FROM "champions" ORDER BY name ASC
+  Rendered champions/index.html.haml within layouts/application (35.9ms)
+  Rendered layouts/_navigation.html.haml (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 93ms (Views: 87.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/champions/new" for 127.0.0.1 at 2013-06-22 11:23:19 +0100
+Processing by ChampionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered champions/_form.html.erb (2.3ms)
+  Rendered champions/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navigation.html.haml (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-22 11:23:26 +0100
+Processing by ChampionsController#index as HTML
+  [1m[35mUser Load (4.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mChampion Load (0.5ms)[0m  [1mSELECT "champions".* FROM "champions" ORDER BY name ASC[0m
+  Rendered champions/index.html.haml within layouts/application (18.7ms)
+  Rendered layouts/_navigation.html.haml (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 85ms (Views: 76.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/champions/new" for 127.0.0.1 at 2013-06-22 11:30:26 +0100
+Processing by ChampionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered champions/_form.html.erb (3.6ms)
+  Rendered champions/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navigation.html.haml (1.4ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 69ms (Views: 65.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/champions" for 127.0.0.1 at 2013-06-22 11:30:37 +0100
+Processing by ChampionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1R7yuEA4VaeJE72yZrZVzMWWqaGDkVRPqX8WLwVRpZo=", "champion"=>{"name"=>"Heimerdinger", "image"=>"http://euw.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/74.jpg", "lane"=>""}, "commit"=>"Create Champion"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "champions" ("created_at", "image", "lane", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 22 Jun 2013 10:30:37 UTC +00:00], ["image", "http://euw.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/74.jpg"], ["lane", ""], ["name", "Heimerdinger"], ["updated_at", Sat, 22 Jun 2013 10:30:37 UTC +00:00], ["user_id", nil]]
+  [1m[35m (68.9ms)[0m  commit transaction
+Redirected to http://localhost:4567/champions/31
+Completed 302 Found in 77ms (ActiveRecord: 69.6ms)
+
+
+Started GET "/champions/31" for 127.0.0.1 at 2013-06-22 11:30:37 +0100
+Processing by ChampionsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mChampion Load (0.1ms)[0m  SELECT "champions".* FROM "champions" WHERE "champions"."id" = ? ORDER BY name ASC LIMIT 1  [["id", "31"]]
+  Rendered champions/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.haml (2.3ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 55ms (Views: 50.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/champions" for 127.0.0.1 at 2013-06-22 11:30:38 +0100
+Processing by ChampionsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mChampion Load (0.9ms)[0m  SELECT "champions".* FROM "champions" ORDER BY name ASC
+  Rendered champions/index.html.haml within layouts/application (19.7ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 96ms (Views: 88.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/champions/new" for 127.0.0.1 at 2013-06-22 11:31:05 +0100
+Processing by ChampionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered champions/_form.html.erb (4.9ms)
+  Rendered champions/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navigation.html.haml (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 58ms (Views: 54.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-06-22 11:31:24 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1R7yuEA4VaeJE72yZrZVzMWWqaGDkVRPqX8WLwVRpZo="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:4567/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-22 11:31:24 +0100
+Processing by ChampionsController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-06-22 11:31:24 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 57ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-06-22 11:31:34 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/shared/_links.erb (0.3ms)
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 88ms (Views: 87.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-06-22 11:31:36 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/registrations/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_navigation.html.haml (0.9ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 94ms (Views: 92.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-06-22 11:31:38 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /home/john/.rvm/gems/ruby-1.9.3-p194@leelol/gems/devise-2.2.4/app/views/devise/sessions/new.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 81ms (Views: 80.1ms | ActiveRecord: 0.0ms)
