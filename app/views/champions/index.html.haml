@@ -1,0 +1,12 @@
+%h1 Champions
+
+.champions-list
+  - @champions.each do |champion|
+    .champion
+      = link_to image_tag(champion.image, style: "width: 80px; height: 80px"), champion_path(champion)
+      .champion-name= champion.name
+      .hidden= link_to 'Destroy', champion, method: :delete, data: { confirm: 'Are you sure?' }
+
+  %br
+
+= link_to 'New Champion', new_champion_path

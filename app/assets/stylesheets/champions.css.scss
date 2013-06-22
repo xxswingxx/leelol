@@ -1,0 +1,18 @@
+// Place all the styles related to the Champions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content {
+  
+}
+.champions-list {
+  width: 1220px;
+  .champion {
+    display: inline-block; 
+    width: image width px; 
+    text-align: center; 
+    &:hover {
+    	opacity: 0.5;
+    }
+  }
+}
