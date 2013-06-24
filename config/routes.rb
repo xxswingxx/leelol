@@ -7,7 +7,8 @@ Leelol::Application.routes.draw do
   end
 
   resources :champions do
-    get '/update_champion', on: :member, to: 'champions#update_stats', as: :update_stats
+    get '/retrieve_data', on: :collection, to: 'champions#retrieve_data', as: :retrieve_data
+    post '/recalculate_stats', on: :member, to: 'champions#recalculate_stats', as: :recalculate_stats
   end
 
 

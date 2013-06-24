@@ -3,7 +3,6 @@ class CreateChampions < ActiveRecord::Migration
     create_table :champions do |t|
       t.string :name
       t.string :image
-      t.string :lane
 
       t.timestamps
     end

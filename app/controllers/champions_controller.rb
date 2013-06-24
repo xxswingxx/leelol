@@ -45,8 +45,6 @@ class ChampionsController < ApplicationController
   # POST /champions
   # POST /champions.json
   def create
-    debugger
-
     @champion = Champion.new(champion_params)
 
     respond_to do |format|
@@ -60,34 +58,27 @@ class ChampionsController < ApplicationController
     end
   end
 
-  def my_champions
-  end
+  def retrieve_data
+    html = Nokogiri::HTML(open('http://leagueoflegends.wikia.com/wiki/Base_champion_statistics'))
+    images = Nokogiri::HTML(open('http://www.mobafire.com/league-of-legends/champions'))
+    length = html.at_css('table.wikitable.sortable').children().length
 
-  def update_stats
-    @champion = Champion.find(params[:id]) 
-    base_uri = 'http://leagueoflegends.wikia.com/wiki/'
-    #html = Nokogiri::HTML(open("#{base_uri}#{@champion.name}"))
-    
-    html = Nokogiri::HTML(open(@champion.source_url)).at_css('div.box-blue').at_css('table').children
-    stats = Array.new
-    html.each do |e|
-      stats << e.children[2].text
-      stats << e.children[6].text
+    i = 1
+    html.at_css('table.wikitable.sortable').children()[1..length-1].each do |champion|
+      image = images.at_css('div.self-clear#browse-build').children()[i].children[1].get_attribute('src')
+      champion_stats = Champion.parse(champion, image)
+      Champion.create(champion_stats)
+      i = i + 2
     end
-    @champion.health = stats[0]
-    @champion.crit_chance = stats[1]
-    @champion.mana = stats[2]
-    @champion.health_regen = stats[3]
-    @champion.speed = stats[4]
-    @champion.mana_regen = stats[5]
-    @champion.armor = stats[6]
-    @champion.range = stats[7]
-    @champion.magic_res = stats[8]
-
-    @champion.save
-
-    redirect_to champion_path(@champion)
+    redirect_to champions_path
   end
+
+  def recalculate_stats
+    @champion = Champion.find(params[:id])
+    @champion.recalculate_stats(params[:champion])
+    render template: 'champions/show'
+  end
+
   # PUT /champions/1
   # PUT /champions/1.json
   def update

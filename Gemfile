@@ -33,6 +33,7 @@ gem 'rails', '3.2.13'
 gem 'simple_form'
 gem 'strong_parameters'
 gem 'therubyracer'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

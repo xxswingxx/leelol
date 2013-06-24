@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624043143) do
+ActiveRecord::Schema.define(:version => 20130624133502) do
 
 # Could not dump table "champions" because of following StandardError
 #   Unknown type 'reference' for column 'user_id'
