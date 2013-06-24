@@ -1,6 +1,7 @@
-%h1 Champions
+.title
+  %h1 Champions
 
-.champions-list
+.champions-list.text-center
   - @champions.each do |champion|
     .champion
       = link_to image_tag(champion.image, style: "width: 80px; height: 80px"), champion_path(champion)

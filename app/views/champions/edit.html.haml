@@ -1,0 +1,8 @@
+.champion-title
+  = image_tag @champion.image
+  %h1 Editing champion
+
+= render 'form'
+
+= link_to 'Show', @champion |
+= link_to 'Back', champions_path

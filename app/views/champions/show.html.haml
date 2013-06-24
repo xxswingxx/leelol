@@ -1,0 +1,49 @@
+%p#notice= notice
+%h1= @champion.name
+
+%p= image_tag @champion.image
+%p
+  %b Lane:
+  = @champion.lane
+%p
+  %b Health
+  = @champion.health
+%p
+  %b Mana
+  = @champion.mana
+
+%p 
+  %b Speed
+  = @champion.speed
+%p
+  %b Armor
+  = @champion.armor
+
+%p
+  %b Magic Resist
+  = @champion.magic_res
+
+%p
+  %b Critical Chance
+  = @champion.crit_chance
+
+%p
+  %b Health Regeneration (per 5 seconds)
+  = @champion.health_regen
+
+%p
+  %b Mana Regeneration (per 5 seconds)
+  = @champion.mana_regen
+
+%p
+  %b Range
+  = @champion.range
+
+%p
+  %b Source URL
+  = @champion.source_url
+
+= link_to 'Edit', edit_champion_path(@champion) |
+= link_to 'Back', champions_path 
+= link_to 'Delete', @champion, method: :delete, data: { confirm: 'Are you sure?' } 
+= link_to 'Update Stats', update_stats_champion_path(@champion)

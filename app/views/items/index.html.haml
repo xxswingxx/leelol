@@ -1,0 +1,31 @@
+%h1 Listing items
+
+%table
+  %tr
+    %th 
+    %th Name
+    %th Stats
+    %th Active
+    %th Passive
+    %th Cost
+    %th
+    %th
+    %th
+
+  - @items.each do |item|
+    %tr
+      %td= image_tag item.image
+      %td= item.name
+      %td= item.stats
+      %td= item.active
+      %td= item.passive
+      %td= item.cost
+      %td= link_to 'Show', item
+      %td= link_to 'Edit', edit_item_path(item)
+      %td= link_to 'Destroy', item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+%br
+
+= link_to 'New Item', new_item_path
+= link_to 'Retrieve items', retrieve_items_path if Item.all.empty?

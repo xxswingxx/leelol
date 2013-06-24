@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @item.name
+%p
+  %b Passive:
+  = @item.passive
+%p
+  %b Cost:
+  = @item.cost
+
+= link_to 'Edit', edit_item_path(@item)
+\|
+= link_to 'Back', items_path

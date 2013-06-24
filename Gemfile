@@ -14,6 +14,7 @@ group :assets do
 end
 
 group :development do
+  gem 'haml-rails' 
   gem 'sqlite3'
 end
 
@@ -22,12 +23,15 @@ group :production do
 end
 
 gem 'bootstrap-sass', '~> 2.3.2.0'
+gem 'carrierwave'
+gem 'debugger'
 gem 'devise'
 gem 'haml'
 gem 'jquery-rails'
+gem 'nokogiri'
 gem 'rails', '3.2.13'
 gem 'simple_form'
-
+gem 'strong_parameters'
 gem 'therubyracer'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

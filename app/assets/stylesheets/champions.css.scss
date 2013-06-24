@@ -3,16 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .content {
-  
-}
-.champions-list {
-  width: 1220px;
-  .champion {
-    display: inline-block; 
-    width: image width px; 
-    text-align: center; 
-    &:hover {
-    	opacity: 0.5;
+  h1{
+    font-family: verdana, arial, helvetica, sans-serif !important;
+  }
+  .title{
+    padding-left: 40px;
+  }
+  .champions-list {
+    .champion {
+      display: inline-block; 
+      text-align: center; 
+      &:hover {
+        opacity: 0.5;
+      }
     }
+  }
+}
+.champion-title{
+  margin-bottom: 20px;
+  img, h1{
+    text-align: center;
+
+    display: inline-block;
   }
 }

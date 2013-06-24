@@ -11,10 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620224409) do
+ActiveRecord::Schema.define(:version => 20130624043143) do
 
 # Could not dump table "champions" because of following StandardError
 #   Unknown type 'reference' for column 'user_id'
+
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.string   "passive"
+    t.integer  "cost"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "image"
+    t.text     "stats"
+    t.text     "active"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

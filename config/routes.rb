@@ -1,7 +1,14 @@
 Leelol::Application.routes.draw do
+
   devise_for :users
 
-  resources :champions
+  resources :items do
+    get '/retrieve_items', on: :collection, to: 'items#retrieve_items', as: :retrieve
+  end
+
+  resources :champions do
+    get '/update_champion', on: :member, to: 'champions#update_stats', as: :update_stats
+  end
 
 
   # The priority is based upon order of creation:

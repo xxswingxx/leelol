@@ -1,0 +1,17 @@
+= simple_form_for(@champion) do |f|
+  - if @champion.errors.any? 
+    #error_explanation
+      %h2
+        = pluralize(@champion.errors.count, "error")
+        prohibited this champion from being saved:
+
+      %ul
+      - @champion.errors.full_messages.each do |msg|
+        %li= msg
+
+  .field= f.input :name 
+  .field= f.input :image
+  .field= f.input :lane 
+  .filed= f.input :source_url
+
+  .actions= f.submit
