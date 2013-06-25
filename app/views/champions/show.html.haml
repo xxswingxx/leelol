@@ -1,68 +1,139 @@
 %p#notice= notice
-%h1= @champion.name
 
-%p= image_tag @champion.image
-%p
-  %b Health
-  %span.stat.health{ data: { health: @champion.health_base + @champion.health_per_lvl } }= "#{@champion.health_base + @champion.health_per_lvl} "
-%p
-  %b Health per level
-  %span.stat.health-per-lvl= @champion.health_per_lvl 
-%p
-  %b Health regeneration
-  %span.stat.health-reg= @champion.health_regen_base
-%p
-  %b Health regeneration per level
-  %span.stat.health-reg-lvl= @champion.health_regen_per_lvl
-%p
-  %b Mana
-  %span.stat.mana{ data: { mana: @champion.mana_base + @champion.mana_per_lvl } }= "#{@champion.mana_base + @champion.mana_per_lvl}"
-%p
-  %b Mana per level
-  %span.stat.mana-per-lvl= @champion.mana_per_lvl 
-%p
-  %b Mana regeneration
-  %span.stat.mana-regen= @champion.mana_regen_base
-%p
-  %b Mana regeneration per level
-  %span.stat.mana-regen-per-lvl= @champion.mana_regen_per_lvl
-%p
-  %b Base attack
-  %span.stat.attack-damage{ data: { attack: @champion.attack_base + @champion.attack_per_lvl } }= "#{@champion.attack_base + @champion.attack_per_lvl}"
-%p
-  %b Attack per level
-  %span.stat.attack-per-lvl= @champion.attack_per_lvl 
-%p
-  %b Attack speed
-  %span.stat.attack-speed{ data: { "attack-speed" => @champion.attack_speed_base } }= "#{@champion.attack_speed_base }"
-%p
-  %b Attack speed per level
-  %span.stat.attack-speed-per-lvl= @champion.attack_speed_per_lvl
-%p
-  %b Armor
-  %span.stat.armor{ data: { armor: @champion.armor_base + @champion.armor_per_lvl } }= "#{@champion.armor_base + @champion.armor_per_lvl}"
-%p
-  %b Armor per lvl
-  %span.stat.armor-per-lvl= @champion.armor_per_lvl 
-%p
-  %b Magic resist
-  %span.stat.magic-resist{ data: { 'magic-resist' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= "#{@champion.magic_resist_base + @champion.magic_resist_per_level}"
-%p
-  %b Magic resist per level
-  %span.stat.magic-resist-per-lvl= @champion.magic_resist_per_level
-%p
-  %b Movement speed
-  %span.stat.movement-speed= @champion.movement_speed
-%p
-  %b Range
-  %span.stat.range= @champion.range
+.champion-profile
+  .champion-name
+    %h1= @champion.name
+    %p= image_tag @champion.image
+  .champion-stats
+    %table
+      %tbody
+        %tr
+          %td 
+            %b Health
+          %td 
+            %span.stat.health{ data: { health: @champion.health_base + @champion.health_per_lvl } }= "#{@champion.health_base + @champion.health_per_lvl} "
+          
+          %td 
+            %b Base attack
+          %td
+            %span.stat.attack-damage{ data: { attack: @champion.attack_base + @champion.attack_per_lvl } }= "#{@champion.attack_base + @champion.attack_per_lvl}"
 
-.level-form
-  Level 
-  %span.level 
-  = simple_form_for(@champion, url: recalculate_stats_champion_path(@champion), method: 'post') do |f|
-    = f.input_field :level, as: :text, class: 'level-slider', data: { 'slider' => true, 'slider-range' => '1,18', 'slider-step' => 1, 'slider-values' => '1,2,3,4,5,6,7,8,8,10,11,12,13,14,15,16,17,18', 'slider-equal-steps' => true, "slider-snap" => true }
+          %td 
+            %b Movement speed
+          %td
+            %span.stat.movement-speed= @champion.movement_speed
 
+        %tr
+          %td 
+            %b Health per lvl
+          %td
+            %span.stat.health-per-lvl= @champion.health_per_lvl 
+                
+          %td 
+            %b Attack per lvl
+          %td
+            %span.stat.attack-per-lvl= @champion.attack_per_lvl 
+
+          %td 
+            %b Range
+          %td
+            %span.stat.range= @champion.range
+        
+        %tr
+          %td 
+            %b Health regen.
+          %td        
+            %span.stat.health-reg= @champion.health_regen_base
+
+          %td 
+            %b Attack speed
+          %td
+            %span.stat.attack-speed{ data: { "attack-speed" => @champion.attack_speed_base } }= "#{@champion.attack_speed_base }"
+         
+          %td 
+            %b Crit. chance(%)
+          %td 0.00
+    
+        %tr
+          %td 
+            %b Health regen. per lvl
+          %td
+            %span.stat.health-reg-lvl= @champion.health_regen_per_lvl
+          %td 
+            %b Att. speed per lvl(%)
+          %td
+            %span.stat.attack-speed-per-lvl= @champion.attack_speed_per_lvl
+          %td 
+            %b Spell vamp(%)
+          %td 0.00
+
+        %tr
+          %td 
+            %b Mana
+          %td
+            %span.stat.mana{ data: { mana: @champion.mana_base + @champion.mana_per_lvl } }= "#{@champion.mana_base + @champion.mana_per_lvl}"
+          
+          %td
+            %b Armor
+          %td
+            %span.stat.armor{ data: { armor: @champion.armor_base + @champion.armor_per_lvl } }= "#{@champion.armor_base + @champion.armor_per_lvl}"
+        %tr
+          %td 
+            %b Mana per lvl
+          %td
+            %span.stat.mana-per-lvl= @champion.mana_per_lvl
+          %td 
+            %b Armor per lvl
+          %td
+            %span.stat.armor-per-lvl= @champion.armor_per_lvl 
+          %td 
+            %b Life steal(%)
+          %td 0.00
+
+        %tr
+          %td 
+            %b Mana regen.
+          %td
+            %span.stat.mana-regen= @champion.mana_regen_base
+          %td 
+            %b Magic resist
+          %td
+            %span.stat.magic-resist{ data: { 'magic-resist' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= "#{@champion.magic_resist_base + @champion.magic_resist_per_level}"
+
+        %tr
+          %td 
+            %b Mana regen. per lvl
+          %td
+            %span.stat.mana-regen-per-lvl= @champion.mana_regen_per_lvl
+          %td 
+            %b Magic resist per lvl
+          %td
+            %span.stat.magic-resist-per-lvl= @champion.magic_resist_per_level
+    .level-form(style="margin-top:20px")
+      %b Level 
+      %span.level 1
+      = simple_form_for(@champion, url: recalculate_stats_champion_path(@champion), method: 'post') do |f|
+        = f.input_field :level, as: :text, class: 'level-slider', data: { 'slider' => true, 'slider-range' => '1,18', 'slider-step' => 1, 'slider-values' => '1,2,3,4,5,6,7,8,8,10,11,12,13,14,15,16,17,18', 'slider-equal-steps' => true, "slider-snap" => true }
+
+  .build-items
+    %table
+      %tr
+        %td
+          .item1(style="border:1px solid;width:50px;height:50px")
+        %td
+          .item2(style="border:1px solid;width:50px;height:50px")
+        %td
+          .item3(style="border:1px solid;width:50px;height:50px")
+      %tr
+        %td
+          .item4(style="border:1px solid;width:50px;height:50px")
+        %td
+          .item5(style="border:1px solid;width:50px;height:50px")
+        %td
+          .item6(style="border:1px solid;width:50px;height:50px")
+
+.items.text-center
+  = render 'items/items'
 
 = link_to 'Edit', edit_champion_path(@champion) |
 = link_to 'Back', champions_path 
