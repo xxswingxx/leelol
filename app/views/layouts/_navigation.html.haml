@@ -1,7 +1,10 @@
 = link_to 'Leelol', root_path, :class => 'brand'
-= link_to 'Items', items_path
 %ul.nav
   - if user_signed_in?
+    %li
+      = link_to 'Champions', champions_path
+    %li
+      = link_to 'Items', items_path
     %li
       = link_to('Logout', destroy_user_session_path, :method=>'delete')
   - else

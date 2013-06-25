@@ -1,0 +1,5 @@
+.items-list
+  - @items.each do |item|
+    .item.tooltip-r{ data: { placement: 'top', toggle: 'tooltip', 'original-title' => item.name } }
+      = link_to image_tag(item.image, style: "width: 50px; height: 50px"), '#', class: 'item', data: item.stats
+      .hidden.item-name= item.name
