@@ -3,7 +3,7 @@
 
 %p= image_tag @champion.image
 %p
-  %b Base health
+  %b Health
   %span.stat.health{ data: { health: @champion.health_base + @champion.health_per_lvl } }= "#{@champion.health_base + @champion.health_per_lvl} "
 %p
   %b Health per level
@@ -15,7 +15,7 @@
   %b Health regeneration per level
   %span.stat.health-reg-lvl= @champion.health_regen_per_lvl
 %p
-  %b Base mana
+  %b Mana
   %span.stat.mana{ data: { mana: @champion.mana_base + @champion.mana_per_lvl } }= "#{@champion.mana_base + @champion.mana_per_lvl}"
 %p
   %b Mana per level
@@ -39,7 +39,7 @@
   %b Attack speed per level
   %span.stat.attack-speed-per-lvl= @champion.attack_speed_per_lvl
 %p
-  %b Base armor
+  %b Armor
   %span.stat.armor{ data: { armor: @champion.armor_base + @champion.armor_per_lvl } }= "#{@champion.armor_base + @champion.armor_per_lvl}"
 %p
   %b Armor per lvl
