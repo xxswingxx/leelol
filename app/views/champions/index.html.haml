@@ -4,7 +4,7 @@
 .champions-list.text-center
   - @champions.each do |champion|
     .champion
-      = link_to image_tag(champion.image, style: "width: 80px; height: 80px"), champion_path(champion)
+      = link_to image_tag(champion.image, style: "width: 95px; height: 95px"), champion_path(champion)
       .champion-name= champion.name
 
   %br

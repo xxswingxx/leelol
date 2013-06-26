@@ -1,9 +1,9 @@
 %p#notice= notice
 
 .champion-profile.text-center
-  .champion-name.text-center
-    %h1= @champion.name
-    %p= image_tag @champion.image, style: "width: 100px; height: 100px"
+  %h1= @champion.name
+  .champion-image.text-center
+    %p= image_tag @champion.image, style: "width: 120px; height: 120px"
     .champion-build-items
       %table
         %tr
