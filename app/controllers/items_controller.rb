@@ -88,6 +88,7 @@ class ItemsController < ApplicationController
     html.at_css('#outer_content').at_css('table').children()[1..length].each do |img|
       item = Item.parse(img)
       Item.create(item)
+      item = nil
     end
 
     redirect_to items_path
