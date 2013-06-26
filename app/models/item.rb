@@ -5,7 +5,7 @@ class Item < ActiveRecord::Base
 
   #default_scope order('name ASC')
 
-  def self.parse(img)
+  def self.parse(item_stats)
     stats_and_uniques = img.children.children.at_css('img').get_attribute('data-descr').split('  ')
 
     stats = stats_and_uniques.first.scan(/(\+\d+\%?[\s\w*]+)/)

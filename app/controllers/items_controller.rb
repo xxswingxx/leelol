@@ -82,15 +82,24 @@ class ItemsController < ApplicationController
   end
 
   def retrieve_items
-    html = Nokogiri::HTML(open('http://www.lolstatistics.com/items/na'))
-    length = html.at_css('#outer_content').at_css('table').children().length
+    html = Nokogiri::HTML(open('http://www.mobafire.com/leagueoflegends/items'))
 
-    html.at_css('#outer_content').at_css('table').children()[1..length].each do |img|
-      item = Item.parse(img)
-      Item.create(item)
-      item = nil
+    hmtl.at_css('#browse-items').css('a.champ-box').each do | item|
+      id = item.get_attribute('href').match(/\d+$/).to_a.first
+      item_stats = Nokogiri::HTML(open("http://www.mobafire.com/ajax/tooltip?relation_type=Item&relation_id=#{id}")).text.strip().gsub("\r\n", '').split("\t")
+
+      # 0 -> Name
+      # 1 -> Total price
+      # 2 -> Recipe price
+      # 3 -> Stats
+      
+      name = item_stats[0]
+      cost = item_stats[1].split(': ').last
+
+
+
+      Item.parse(item_stats, id)
     end
-
     redirect_to items_path
   end
 
