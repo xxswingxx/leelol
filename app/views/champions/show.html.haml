@@ -20,6 +20,10 @@
             .item-set.empty#5
           %td
             .item-set.empty#6
+      %br
+      %p
+        %b Build Cost:
+        %span.build-cost 0 
 
   .champion-stats
     %table.table.table-bordered.table-hover.table-striped.table-condensed
@@ -33,12 +37,12 @@
           %td 
             %b Attack
           %td.data
-            %span.stat.attack-damage{ data: { attack: @champion.attack_base + @champion.attack_per_lvl } }= "#{@champion.attack_base + @champion.attack_per_lvl}"
+            %span.stat.attack-damage{ data: { "attack-damage" => @champion.attack_base + @champion.attack_per_lvl } }= "#{@champion.attack_base + @champion.attack_per_lvl}"
 
           %td 
             %b Movement speed
           %td.data
-            %span.stat.movement-speed= @champion.movement_speed
+            %span.stat.movement-speed{ data: { "movement-speed" => @champion.movement_speed } }= @champion.movement_speed
 
         %tr
           %td 
@@ -60,7 +64,7 @@
           %td 
             %b Health regen.
           %td.data        
-            %span.stat.health-reg= @champion.health_regen_base
+            %span.stat.health-regeneration{ data: { "health-regeneration" => @champion.health_regen_base } }= @champion.health_regen_base
 
           %td 
             %b Attack speed
@@ -70,7 +74,7 @@
           %td 
             %b Crit. chance(%)
           %td.data
-            %span.critical-chance 0.00
+            %span.critical-strike-chance{ data: { "critical-strike-vamp" => 0.00 } } 0.00
     
         %tr
           %td 
@@ -84,7 +88,7 @@
           %td 
             %b Spell vamp(%)
           %td.data 
-            %span.spell-vamp 0.00
+            %span.spell-vamp{ data: { "spell-vamp" => 0.00 } } 0.00
 
         %tr
           %td 
@@ -99,7 +103,7 @@
           %td 
             %b Life steal(%)
           %td.data 
-            %span.life-steal 0.00
+            %span.life-steal{ data: { "life-steal" => 0.00 } } 0.00
         %tr
           %td 
             %b Mana per lvl
@@ -112,17 +116,17 @@
           %td 
             %b Ability power
           %td.data
-            %span.stat.ability-power 0.00
+            %span.stat.ability-power{ data: { "ability-power" => 0.00 } } 0.00
 
         %tr
           %td 
             %b Mana regen.
           %td.data
-            %span.stat.mana-regen= @champion.mana_regen_base
+            %span.stat.mana-regeneration{ data: { "mana-regeneration" => @champion.mana_regen_base } }= @champion.mana_regen_base
           %td 
             %b Magic resist
           %td.data
-            %span.stat.magic-resist{ data: { 'magic-resist' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= "#{@champion.magic_resist_base + @champion.magic_resist_per_level}"
+            %span.stat.magic-resistance{ data: { 'magic-resistance' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= "#{@champion.magic_resist_base + @champion.magic_resist_per_level}"
 
         %tr
           %td 
@@ -138,7 +142,7 @@
         %b Level 
         %span.level 1
         = simple_form_for(@champion, url: recalculate_stats_champion_path(@champion), method: 'post') do |f|
-          = f.input_field :level, as: :text, class: 'level-slider', data: { 'slider' => true, 'slider-range' => '1,18', 'slider-step' => 1, 'slider-values' => '1,2,3,4,5,6,7,8,8,10,11,12,13,14,15,16,17,18', 'slider-equal-steps' => true, "slider-snap" => true }
+          = f.input_field :level, as: :text, class: 'level-slider', data: { 'slider' => true, 'slider-range' => '1,18', 'slider-step' => 1, 'slider-values' => '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18', 'slider-equal-steps' => true, "slider-snap" => true }
 
 
 
