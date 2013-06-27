@@ -82,35 +82,8 @@ class ItemsController < ApplicationController
   end
 
   def retrieve_items
-    html = Nokogiri::HTML(open('http://www.mobafire.com/league-of-legends/items'))
-
-    html.at_css('#browse-items').css('a.champ-box').each do | item|
-      id = item.get_attribute('href').match(/\d+$/).to_a.first
-      item_stats = Nokogiri::HTML(open("http://www.mobafire.com/ajax/tooltip?relation_type=Item&relation_id=#{id}")).text.strip().gsub("\r\n", '').split("\t").reject {|c| c.empty?}
-
-      # 0 -> Name
-      # 1 -> Total price
-      # 2 -> Recipe price
-      # 3 -> Stats&descr
-
-      image = item.at_css('img').get_attribute('src')
-      name = item_stats[0].gsub('Classic Only', '').gsub('Dominion Only', '')
-      cost = item_stats[1].split(': ').last
-
-      desc = "@ #{item_stats[3].gsub(/UNIQUE\s[\w\W]*/, '')}".scan(/[@,]\s(\d+\s[A-Z][\s*\w*]+)/)
-      uniques = item_stats[3].match(/UNIQUE\s[\w\W]*/).to_a
-
-      stats = Hash.new
-      #Just in case if these are boots
-      movement_speed = item_stats[3].scan(/(\d+) Movement Speed/).flatten.first
-      stats.merge!(movement_speed: movement_speed)  if movement_speed.present?
-      desc.flatten.each do |stat|
-        value = stat.scan(/\d+/).flatten.first
-        key = stat.gsub("#{value} ", '').downcase.gsub(' ', '_').to_sym
-        stats.merge!(key => value)
-      end
-      Item.create( image: image, name: name, cost: cost, stats: stats, passive: uniques)
-    end
+    ItemsRetriever.perform_async
+    flash[:notice] = 'We are processing your request, this may take a while, plase go back later.'
     redirect_to items_path
   end
 

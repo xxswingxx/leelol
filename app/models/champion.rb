@@ -32,20 +32,4 @@ class Champion < ActiveRecord::Base
                      }
 
   end
-
-  def recalculate_stats(data)
-    lvl = data[:level].to_i - 1
-
-    self.health_base = self.health_base + self.health_per_lvl * lvl
-    self.health_regen_base = self.health_regen_base + self.health_regen_per_lvl * lvl
-    self.mana_base = self.mana_base + self.mana_per_lvl * lvl
-    self.mana_regen_base = self.mana_regen_base + self.mana_regen_per_lvl * lvl
-    self.attack_base = self.attack_base + self.attack_per_lvl * lvl
-
-    self.attack_speed_base = self.attack_speed_base + (lvl * self.attack_speed_base * self.attack_speed_per_lvl/100) 
-
-    self.armor_base = self.armor_base + self.armor_per_lvl * lvl
-    self.magic_resist_base = self.magic_resist_base + self.magic_resist_per_level * lvl
-    self.recalculated = true
-  end
 end

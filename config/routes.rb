@@ -8,7 +8,6 @@ Leelol::Application.routes.draw do
 
   resources :champions do
     get '/retrieve_data', on: :collection, to: 'champions#retrieve_data', as: :retrieve_data
-    post '/recalculate_stats', on: :member, to: 'champions#recalculate_stats', as: :recalculate_stats
   end
 
 

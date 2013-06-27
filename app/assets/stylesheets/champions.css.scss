@@ -30,7 +30,6 @@
       text-align: center; 
       padding-top: 50px;
       float: left;
-      padding-left: 20px;
       .item-set {
         border: 1px solid #cccccc;
         width:50px;
@@ -39,13 +38,16 @@
     }
     .champion-stats {
       margin-top: 50px;
-      padding-left: 50px;
+      padding-left: 10px;
       float: left;
       table {
         td.data {
           color: green;
           align: right !important;
           margin: 20px;
+          .extra{
+            color: blue
+          }
         }
       }
     }

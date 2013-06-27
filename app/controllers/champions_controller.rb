@@ -59,24 +59,9 @@ class ChampionsController < ApplicationController
   end
 
   def retrieve_data
-    html = Nokogiri::HTML(open('http://leagueoflegends.wikia.com/wiki/Base_champion_statistics'))
-    images = Nokogiri::HTML(open('http://www.mobafire.com/league-of-legends/champions'))
-    length = html.at_css('table.wikitable.sortable').children().length
-
-    i = 1
-    html.at_css('table.wikitable.sortable').children()[1..length-1].each do |champion|
-      image = images.at_css('div.self-clear#browse-build').children()[i].children[1].get_attribute('src')
-      champion_stats = Champion.parse(champion, image)
-      Champion.create(champion_stats)
-      i = i + 2
-    end
+    ChampionsRetriever.perform_async
+    flash[:notice] = 'We are processing your request, this may take a while, plase go back later.'
     redirect_to champions_path
-  end
-
-  def recalculate_stats
-    @champion = Champion.find(params[:id])
-    @champion.recalculate_stats(params[:champion])
-    render template: 'champions/show'
   end
 
   # PUT /champions/1

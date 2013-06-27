@@ -11,35 +11,38 @@ window.onload = ->
         '-' + match.toLowerCase()
 
       increment = parseFloat object[keys[i]]
-      $(".stat.#{spanClass}").html(parseFloat($(".stat.#{spanClass}").html()) + increment)
+      extra = parseFloat($(".extra##{spanClass}").data('extraAcumulation')) + increment
+      $(".extra##{spanClass}").data('extraAcumulation', extra)
+      $(".extra##{spanClass}").html("(+#{extra})")
 
   $('.tooltip-r').tooltip()
   $('.level-slider').bind "slider:changed", (event, data) ->
     $('span.level').html(data.value)
+    lvl = data.value - 1
 
     baseHealth = parseFloat $('span.stat.health').data('health')
     healthPerLvl = parseFloat $('span.stat.health-per-lvl').html()
-    $('span.stat.health').html((baseHealth + healthPerLvl * (data.value - 1)).toFixed(2))
+    $('span.stat.health').html((baseHealth + healthPerLvl * lvl).toFixed(2))
 
     baseMana = parseFloat $('span.stat.mana').data('mana')
     manaPerLvl = parseFloat $('span.stat.mana-per-lvl').html()
-    $('span.stat.mana').html((baseMana + manaPerLvl * (data.value - 1)).toFixed(2))
+    $('span.stat.mana').html((baseMana + manaPerLvl * lvl).toFixed(2))
 
-    baseAttack = parseFloat $('span.stat.attack').data('attack')
+    baseAttack = parseFloat $('span.stat.attack-damage').data('attack-damage')
     attackPerLvl = parseFloat $('span.stat.attack-per-lvl').html()
-    $('span.stat.attack').html((baseAttack + attackPerLvl * (data.value - 1)).toFixed(2))
+    $('span.stat.attack-damage').html((baseAttack + attackPerLvl * lvl).toFixed(2))
 
     baseAttackSpeed = parseFloat $('span.stat.attack-speed').data('attack-speed')
     attackSpeedPerLvl = parseFloat($('span.stat.attack-speed-per-lvl').html()) / 100
-    $('span.stat.attack-speed').html((baseAttackSpeed + (baseAttackSpeed * attackSpeedPerLvl * (data.value - 1))).toFixed(2))
+    $('span.stat.attack-speed').html((baseAttackSpeed + (baseAttackSpeed * attackSpeedPerLvl * lvl)).toFixed(2))
 
     baseArmor = parseFloat $('span.stat.armor').data('armor')
     armorPerLvl = parseFloat $('span.stat.armor-per-lvl').html()
-    $('span.stat.armor').html((baseArmor + armorPerLvl * (data.value - 1)).toFixed(2))
+    $('span.stat.armor').html((baseArmor + armorPerLvl * lvl).toFixed(2))
 
-    baseMagicRes = parseFloat $('span.stat.magic-resist').data('magic-resist')
+    baseMagicRes = parseFloat $('span.stat.magic-resistance').data('magic-resistance')
     magicResPerLvl = parseFloat $('span.stat.magic-resist-per-lvl').html()
-    $('span.stat.magic-resist').html((baseMagicRes + magicResPerLvl * (data.value - 1)).toFixed(2))
+    $('span.stat.magic-resistance').html((baseMagicRes + magicResPerLvl * lvl).toFixed(2))
   
   $('.item-icon').on 'click', (e) ->
     e.preventDefault()
