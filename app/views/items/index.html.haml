@@ -1,14 +1,12 @@
-%h1 Listing items
+%h1 Items
 
-%table
+%table.table.table-bordered.table-hover.table-striped.table-condensed
   %tr
-    %th 
+    %th Image
     %th Name
     %th Stats
-    %th Active
-    %th Passive
+    %th Special
     %th Cost
-    %th
     %th
     %th
 
@@ -16,11 +14,9 @@
     %tr
       %td= image_tag item.image
       %td= item.name
-      %td= item.stats
-      %td= item.active
-      %td= item.passive
+      %td= (item.stats.map { |k, v| "+#{v} #{k.to_s.gsub('_', ' ')}" }).join(', ')
+      %td= item.passive.first
       %td= item.cost
-      %td= link_to 'Show', item
       %td= link_to 'Edit', edit_item_path(item)
       %td= link_to 'Destroy', item, :method => :delete, :data => { :confirm => 'Are you sure?' }
 

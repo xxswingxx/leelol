@@ -1,7 +1,7 @@
 .items-list
   - @items.each do |item|
-    - description = item.stats.map { |k, v| "#{v} #{k.to_s.gsub('_', ' ')}" }
+    - description = item.stats.map { |k, v| "+#{v} #{k.to_s.gsub('_', ' ')}" }
     - specials = "#{item.passive.join(".")} #{item.active}"
-    .item-icon.tooltip-r{ data: { name: item.name, id: item.id, placement: 'top', toggle: 'tooltip', 'original-title' => "#{item.name}: #{description.first} #{specials}" } }
-      = link_to image_tag(item.image, style: "width: 50px; height: 50px"), '#', class: 'item-src', data: item.stats
+    .item-icon.tooltip-r{ data: { name: item.name, id: item.id, placement: 'top', toggle: 'tooltip', 'original-title' => "#{item.name}: #{description.join(', ') } #{specials}. Cost: #{item.cost}" } }
+      = link_to image_tag(item.image, style: "width: 50px; height: 50px"), '#', class: 'item-src', data: item.stats.merge(cost: item.cost)
       .hidden-data{ data: item.stats }

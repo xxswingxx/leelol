@@ -3,27 +3,15 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 window.onload = -> 
-  keyToClass = (object) ->
+  updateStats = (object, inc) ->
     keys = Object.keys(object)
-    for i in [0...keys.length]
-      switch keys[i]
-        when 'armor'
-          1
-        when 'abilityPower'
-          1
-        when '%CriticalStrikeChance'
-          1
-        when 'health'
-          1
-        when 'magicResist'
-          1
-        when 'mana'
-          1
-        when 'manaRegenPer5Seconds'
-          1
 
-  updateStats = (object, incOrDec) ->
-    1 + 1
+    for i in [0...keys.length]
+      spanClass = keys[i].replace /[A-Z]/g, (match) ->
+        '-' + match.toLowerCase()
+
+      increment = parseFloat object[keys[i]]
+      $(".stat.#{spanClass}").html(parseFloat($(".stat.#{spanClass}").html()) + increment)
 
   $('.tooltip-r').tooltip()
   $('.level-slider').bind "slider:changed", (event, data) ->
@@ -55,13 +43,19 @@ window.onload = ->
   
   $('.item-icon').on 'click', (e) ->
     e.preventDefault()
-
     elem = document.createElement("img")
     elem.setAttribute('src',$(this).find('.item-src img').attr('src') )
     $(elem).appendTo $($('.empty')[0])
+    $($('.empty')[0]).data('cost', $(this).find('.item-src').data('cost'))
     $($('.empty')[0]).removeClass('empty')
+
+    updateStats($(this).find('.hidden-data').data(), true)
+    $('.build-cost').html(parseInt($('.build-cost').html()) + parseInt($(this).find('.item-src').data('cost')))
 
   $('.item-set').on 'click', (e) ->
     e.preventDefault()
     $(this).html('')
+    if typeof $(this).data('cost') != 'undefined'
+      $('.build-cost').html(parseInt($('.build-cost').html()) - parseInt($(this).data('cost')))
+      $(this).data('cost', 0)
     $(this).addClass('empty')
