@@ -14,6 +14,7 @@ group :assets do
 end
 
 group :development do
+  gem 'debugger'
   gem 'haml-rails' 
   gem 'sqlite3'
 end
@@ -24,7 +25,6 @@ end
 
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'carrierwave'
-gem 'debugger'
 gem 'devise'
 gem 'haml'
 gem 'jquery-rails'
