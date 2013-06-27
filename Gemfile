@@ -16,12 +16,11 @@ end
 group :development do
   gem 'debugger'
   gem 'haml-rails' 
-  gem 'sqlite3'
+  #gem 'sqlite3'
 end
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
+
 
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'carrierwave'
