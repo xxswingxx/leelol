@@ -34,7 +34,6 @@
           %td.data 
             %span.stat.health{ data: { health: @champion.health_base + @champion.health_per_lvl } }= "#{@champion.health_base + @champion.health_per_lvl} "
             %span.extra#health{ data: { extra_acumulation:  0 } } (+0)
-            
           
           %td 
             %b Attack
@@ -42,7 +41,6 @@
             %span.stat.attack-damage{ data: { "attack-damage" => @champion.attack_base + @champion.attack_per_lvl } }= "#{@champion.attack_base + @champion.attack_per_lvl}"
             %span.extra#attack-damage{ data: { extra_acumulation:  0 } } (+0)
             
-
           %td 
             %b Movement speed
           %td.data
@@ -69,7 +67,6 @@
             %b Health regen.
           %td.data        
             %span.stat.health-regeneration{ data: { "health-regeneration" => @champion.health_regen_base } }= @champion.health_regen_base
-            
             %span.extra#health-regeneration{ data: { extra_acumulation:  0 } } (+0)
             
           %td 
@@ -78,12 +75,11 @@
             %span.stat.attack-speed{ data: { "attack-speed" => @champion.attack_speed_base } }= "#{@champion.attack_speed_base }"         
             %span.extra#attack-speed{ data: { extra_acumulation: 0 } } (+0)
             
-         
           %td 
             %b Crit. chance(%)
           %td.data
             %span.critical-strike-chance{ data: { "critical-strike-vamp" => 0.00 } } 0.00
-            %span.extra#critical-strike-chance{{ data: { extra_acumulation:  0 } } (+0)
+            %span.extra#critical-strike-chance{ data: { extra_acumulation:  0 } } (+0)
     
         %tr
           %td 
@@ -98,8 +94,7 @@
             %b Spell vamp(%)
           %td.data 
             %span.stat.spell-vamp{ data: { "spell-vamp" => 0.00 } } 0.00
-            %span.extra#spell-vamp{{ data: { extra_acumulation:  0 } } (+0)
-
+            %span.extra#spell-vamp{ data: { extra_acumulation:  0 } } (+0)
 
         %tr
           %td 
@@ -119,7 +114,7 @@
             %b Life steal(%)
           %td.data 
             %span.stat.life-steal{ data: { "life-steal" => 0.00 } } 0.00
-            %span.extra#life-steal{{ data: { extra_acumulation:  0 } } (+0)
+            %span.extra#life-steal{ data: { extra_acumulation:  0 } } (+0)
 
         %tr
           %td 
@@ -134,7 +129,7 @@
             %b Ability power
           %td.data
             %span.stat.ability-power{ data: { extra_acumulation: 0.00 } } 0.00
-            %span.extra#critical-strike-chance{{ data: { extra_acumulation:  0 } } (+0)
+            %span.extra#ability-power{ data: { extra_acumulation:  0 } } (+0)
 
 
         %tr
@@ -142,13 +137,18 @@
             %b Mana regen.
           %td.data
             %span.stat.mana-regeneration{ data: { "mana-regeneration" => @champion.mana_regen_base } }= @champion.mana_regen_base         
-            %span.extra#mana-regeneration{ data: { extra_acumulation: 0} } (+0)
+            %span.extra#mana-regeneration{ data: { extra_acumulation: 0 } } (+0)
             
           %td 
             %b Magic resist
           %td.data
             %span.stat.magic-resistance{ data: { 'magic-resistance' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= "#{@champion.magic_resist_base + @champion.magic_resist_per_level}"  
             %span.extra#magic-resistance{ data: { extra_acumulation:  0 } } (+0)
+          %td 
+            %b Cooldown reduction
+          %td.data
+            %span.stat.cooldown-reduction{ data: { 'cooldown-reduction' => 0 } }= 0
+            %span.extra#cooldown-reduction{ data: { extra_acumulation:  0 } } (+0)
             
 
         %tr

@@ -4,4 +4,4 @@
     - specials = "#{item.passive.join(".")} #{item.active}"
     .item-icon.tooltip-r{ data: { html: true, name: item.name, id: item.id, placement: 'top', toggle: 'tooltip', 'original-title' => "#{item.name}: #{description.join(', ') } #{specials} Cost: #{item.cost}" } }
       = link_to image_tag(item.image, style: "width: 50px; height: 50px"), '#', class: 'item-src', data: item.stats.merge(cost: item.cost)
-      .hidden-data{ data: item.stats }
+      .hidden-data{ class: "item-#{item.id}", data: item.stats.merge(id: item.id) }

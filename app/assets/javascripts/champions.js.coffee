@@ -3,15 +3,19 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 window.onload = -> 
+  keyToClass = (key) ->
+    key.replace /[A-Z]/g, (match) ->
+        '-' + match.toLowerCase()
+
   updateStats = (object, inc) ->
     keys = Object.keys(object)
 
     for i in [0...keys.length]
-      spanClass = keys[i].replace /[A-Z]/g, (match) ->
-        '-' + match.toLowerCase()
+      spanClass = keyToClass(keys[i])
+      diff = parseFloat object[keys[i]]
+      diff = diff * -1 if !inc
 
-      increment = parseFloat object[keys[i]]
-      extra = parseFloat($(".extra##{spanClass}").data('extraAcumulation')) + increment
+      extra = parseFloat($(".extra##{spanClass}").data('extraAcumulation')) + diff
       $(".extra##{spanClass}").data('extraAcumulation', extra)
       $(".extra##{spanClass}").html("(+#{extra})")
 
@@ -46,19 +50,24 @@ window.onload = ->
   
   $('.item-icon').on 'click', (e) ->
     e.preventDefault()
-    elem = document.createElement("img")
-    elem.setAttribute('src',$(this).find('.item-src img').attr('src') )
-    $(elem).appendTo $($('.empty')[0])
-    $($('.empty')[0]).data('cost', $(this).find('.item-src').data('cost'))
-    $($('.empty')[0]).removeClass('empty')
-
-    updateStats($(this).find('.hidden-data').data(), true)
-    $('.build-cost').html(parseInt($('.build-cost').html()) + parseInt($(this).find('.item-src').data('cost')))
+    if typeof $('.empty')[0] != 'undefined'
+      elem = document.createElement("img")
+      elem.setAttribute('src',$(this).find('.item-src img').attr('src') )
+      $(elem).appendTo $($('.empty')[0])
+      $($('.empty')[0]).data('cost', $(this).find('.item-src').data('cost'))
+      $($('.empty')[0]).attr('data-item-id', $(this).find('.hidden-data').data('id'))
+      $($('.empty')[0]).removeClass('empty')
+      updateStats($(this).find('.hidden-data').data(), true)
+      $('.build-cost').html(parseInt($('.build-cost').html()) + parseInt($(this).find('.item-src').data('cost')))
 
   $('.item-set').on 'click', (e) ->
     e.preventDefault()
     $(this).html('')
     if typeof $(this).data('cost') != 'undefined'
       $('.build-cost').html(parseInt($('.build-cost').html()) - parseInt($(this).data('cost')))
+      itemId = $(this).attr('data-item-id')
+      statData = $(".hidden-data.item-#{itemId}").data()
+      updateStats(statData, false) if statData != null
+      $(this).attr('data-item-id', '')
       $(this).data('cost', 0)
-    $(this).addClass('empty')
+      $(this).addClass('empty')
