@@ -13,8 +13,30 @@
 
 ActiveRecord::Schema.define(:version => 20130624133502) do
 
-# Could not dump table "champions" because of following StandardError
-#   Unknown type 'reference' for column 'user_id'
+  create_table "champions", :force => true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.integer  "range"
+    t.float    "health_base"
+    t.float    "health_per_lvl"
+    t.float    "health_regen_base"
+    t.float    "health_regen_per_lvl"
+    t.float    "mana_base"
+    t.float    "mana_per_lvl"
+    t.float    "mana_regen_base"
+    t.float    "mana_regen_per_lvl"
+    t.float    "attack_base"
+    t.float    "attack_per_lvl"
+    t.float    "attack_speed_base"
+    t.float    "attack_speed_per_lvl"
+    t.float    "armor_base"
+    t.float    "armor_per_lvl"
+    t.float    "magic_resist_base"
+    t.float    "magic_resist_per_level"
+    t.float    "movement_speed"
+  end
 
   create_table "items", :force => true do |t|
     t.string   "name"

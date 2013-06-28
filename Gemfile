@@ -16,11 +16,6 @@ end
 group :development do
   gem 'debugger'
   gem 'haml-rails' 
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
 end
 
 gem 'bootstrap-sass', '~> 2.3.2.0'
@@ -28,6 +23,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'haml'
 gem 'jquery-rails'
+gem 'mysql2'
 gem 'nokogiri'
 gem 'rails', '3.2.13'
 gem 'sidekiq'
