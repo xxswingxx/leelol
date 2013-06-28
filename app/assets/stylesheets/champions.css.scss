@@ -6,6 +6,7 @@
   h1{
     font-family: verdana, arial, helvetica, sans-serif !important;
   }
+  width: auto;
   .stat{
     display: inline-block;
   }
@@ -29,6 +30,7 @@
     .champion-image {
       text-align: center; 
       padding-top: 50px;
+      padding-left: 5px;
       float: left;
       .item-set {
         border: 1px solid #cccccc;

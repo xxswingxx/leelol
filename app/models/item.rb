@@ -16,7 +16,7 @@ class Item < ActiveRecord::Base
       cost = item_stats[1].split(': ').last
 
       desc = "@ #{item_stats[3].gsub(/UNIQUE\s[\w\W]*/, '')}".scan(/[@,]\s(\d+\s[A-Z][\s*\w*]+)/)
-      uniques = item_stats[3].match(/UNIQUE\s[\w\W]*/).to_a
+      uniques = [item_stats[3].match(/UNIQUE\s[\w\W]*/).to_a[0].try(:gsub, ':', '-')]
 
       stats = Hash.new
       

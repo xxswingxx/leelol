@@ -48,12 +48,12 @@
 
         %tr
           %td 
-            %b Health per lvl
+            %b Health+/lvl
           %td.data
             %span.stat.health-per-lvl= @champion.health_per_lvl 
                 
           %td 
-            %b Attack per lvl
+            %b Attack+/lvl
           %td.data
             %span.stat.attack-per-lvl= @champion.attack_per_lvl 
 
@@ -64,7 +64,7 @@
         
         %tr
           %td 
-            %b Health regen.
+            %b Health+(5s)
           %td.data        
             %span.stat.health-regeneration{ data: { "health-regeneration" => @champion.health_regen_base } }= @champion.health_regen_base
             %span.extra#health-regeneration{ data: { extra_acumulation:  0 } } (+0)
@@ -83,11 +83,11 @@
     
         %tr
           %td 
-            %b Health regen. per lvl
+            %b Health+(5s)/lvl
           %td.data
             %span.stat.health-reg-lvl= @champion.health_regen_per_lvl
           %td 
-            %b Att. speed per lvl(%)
+            %b Att.speed/lvl(%)
           %td.data
             %span.stat.attack-speed-per-lvl= @champion.attack_speed_per_lvl
           %td 
@@ -118,11 +118,11 @@
 
         %tr
           %td 
-            %b Mana per lvl
+            %b Mana+/lvl
           %td.data
             %span.stat.mana-per-lvl= @champion.mana_per_lvl
           %td 
-            %b Armor per lvl
+            %b Armor+/lvl
           %td.data
             %span.stat.armor-per-lvl= @champion.armor_per_lvl 
           %td 
@@ -134,7 +134,7 @@
 
         %tr
           %td 
-            %b Mana regen.
+            %b Mana+(5s)
           %td.data
             %span.stat.mana-regeneration{ data: { "mana-regeneration" => @champion.mana_regen_base } }= @champion.mana_regen_base         
             %span.extra#mana-regeneration{ data: { extra_acumulation: 0 } } (+0)
@@ -145,7 +145,7 @@
             %span.stat.magic-resistance{ data: { 'magic-resistance' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= "#{@champion.magic_resist_base + @champion.magic_resist_per_level}"  
             %span.extra#magic-resistance{ data: { extra_acumulation:  0 } } (+0)
           %td 
-            %b Cooldown reduction
+            %b CD reduction
           %td.data
             %span.stat.cooldown-reduction{ data: { 'cooldown-reduction' => 0 } }= 0
             %span.extra#cooldown-reduction{ data: { extra_acumulation:  0 } } (+0)
@@ -153,11 +153,11 @@
 
         %tr
           %td 
-            %b Mana regen. per lvl
+            %b Mana+(5s)/lvl
           %td.data
             %span.stat.mana-regen-per-lvl= @champion.mana_regen_per_lvl
           %td 
-            %b Magic resist per lvl
+            %b Magic resist./lvl
           %td.data
             %span.stat.magic-resist-per-lvl= @champion.magic_resist_per_level
     .level-form.stats(style="margin-top:20px")
