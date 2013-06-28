@@ -3,51 +3,63 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 window.onload = -> 
+  calculateTotal = (name) ->
+    base = parseFloat($(".stat.#{name}").html())
+    extra = parseFloat($(".extra##{name}").data('extraAcumulation'))
+    $(".total.#{name}").html(base + extra)
+
   keyToClass = (key) ->
     key.replace /[A-Z]/g, (match) ->
-        '-' + match.toLowerCase()
+      '-' + match.toLowerCase()
 
   updateStats = (object, inc) ->
     keys = Object.keys(object)
 
     for i in [0...keys.length]
-      spanClass = keyToClass(keys[i])
+      className = keyToClass(keys[i])
       diff = parseFloat object[keys[i]]
       diff = diff * -1 if !inc
 
-      extra = parseFloat($(".extra##{spanClass}").data('extraAcumulation')) + diff
-      $(".extra##{spanClass}").data('extraAcumulation', extra)
-      $(".extra##{spanClass}").html("(+#{extra})")
+      extra = parseFloat($(".extra##{className}").data('extraAcumulation')) + diff
+      $(".extra##{className}").data('extraAcumulation', extra)
+      $(".extra##{className}").html("(+#{extra}) = ")
+      calculateTotal(className)
 
   $('.tooltip-r').tooltip()
   $('.level-slider').bind "slider:changed", (event, data) ->
-    $('span.level').html(data.value)
+    $('.level').html(data.value)
     lvl = data.value - 1
 
-    baseHealth = parseFloat $('span.stat.health').data('health')
-    healthPerLvl = parseFloat $('span.stat.health-per-lvl').html()
-    $('span.stat.health').html((baseHealth + healthPerLvl * lvl).toFixed(2))
+    baseHealth = parseFloat $('.stat.health').data('health')
+    healthPerLvl = parseFloat $('.stat.health-per-lvl').html()
+    $('.stat.health').html((baseHealth + healthPerLvl * lvl).toFixed(2))
+    calculateTotal('health')
 
-    baseMana = parseFloat $('span.stat.mana').data('mana')
-    manaPerLvl = parseFloat $('span.stat.mana-per-lvl').html()
-    $('span.stat.mana').html((baseMana + manaPerLvl * lvl).toFixed(2))
+    baseMana = parseFloat $('.stat.mana').data('mana')
+    manaPerLvl = parseFloat $('.stat.mana-per-lvl').html()
+    $('.stat.mana').html((baseMana + manaPerLvl * lvl).toFixed(2))
+    calculateTotal('mana')
 
-    baseAttack = parseFloat $('span.stat.attack-damage').data('attack-damage')
-    attackPerLvl = parseFloat $('span.stat.attack-per-lvl').html()
-    $('span.stat.attack-damage').html((baseAttack + attackPerLvl * lvl).toFixed(2))
+    baseAttack = parseFloat $('.stat.attack-damage').data('attack-damage')
+    attackPerLvl = parseFloat $('.stat.attack-per-lvl').html()
+    $('.stat.attack-damage').html((baseAttack + attackPerLvl * lvl).toFixed(2))
+    calculateTotal('attack-damage')
 
-    baseAttackSpeed = parseFloat $('span.stat.attack-speed').data('attack-speed')
-    attackSpeedPerLvl = parseFloat($('span.stat.attack-speed-per-lvl').html()) / 100
-    $('span.stat.attack-speed').html((baseAttackSpeed + (baseAttackSpeed * attackSpeedPerLvl * lvl)).toFixed(2))
+    baseAttackSpeed = parseFloat $('.stat.attack-speed').data('attack-speed')
+    attackSpeedPerLvl = parseFloat($('.stat.attack-speed-per-lvl').html()) / 100
+    $('.stat.attack-speed').html((baseAttackSpeed + (baseAttackSpeed * attackSpeedPerLvl * lvl)).toFixed(2))
+    calculateTotal('attack-speed')
 
-    baseArmor = parseFloat $('span.stat.armor').data('armor')
-    armorPerLvl = parseFloat $('span.stat.armor-per-lvl').html()
-    $('span.stat.armor').html((baseArmor + armorPerLvl * lvl).toFixed(2))
+    baseArmor = parseFloat $('.stat.armor').data('armor')
+    armorPerLvl = parseFloat $('.stat.armor-per-lvl').html()
+    $('.stat.armor').html((baseArmor + armorPerLvl * lvl).toFixed(2))
+    calculateTotal('armor')
 
-    baseMagicRes = parseFloat $('span.stat.magic-resistance').data('magic-resistance')
-    magicResPerLvl = parseFloat $('span.stat.magic-resist-per-lvl').html()
-    $('span.stat.magic-resistance').html((baseMagicRes + magicResPerLvl * lvl).toFixed(2))
-  
+    baseMagicRes = parseFloat $('.stat.magic-resistance').data('magic-resistance')
+    magicResPerLvl = parseFloat $('.stat.magic-resist-per-lvl').html()
+    $('.stat.magic-resistance').html((baseMagicRes + magicResPerLvl * lvl).toFixed(2))
+    calculateTotal('magic-resistance')
+
   $('.item-icon').on 'click', (e) ->
     e.preventDefault()
     if typeof $('.empty')[0] != 'undefined'

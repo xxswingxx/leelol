@@ -18,6 +18,11 @@ group :development do
   gem 'haml-rails' 
 end
 
+group :production do
+	gem 'unicorn'
+end
+
+gem 'cancan'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'carrierwave'
 gem 'devise'

@@ -32,134 +32,110 @@
           %td 
             %b Health
           %td.data 
-            %span.stat.health{ data: { health: @champion.health_base + @champion.health_per_lvl } }= "#{@champion.health_base + @champion.health_per_lvl} "
-            %span.extra#health{ data: { extra_acumulation:  0 } } (+0)
-          
-          %td 
-            %b Attack
-          %td.data
-            %span.stat.attack-damage{ data: { "attack-damage" => @champion.attack_base + @champion.attack_per_lvl } }= "#{@champion.attack_base + @champion.attack_per_lvl}"
-            %span.extra#attack-damage{ data: { extra_acumulation:  0 } } (+0)
-            
-          %td 
-            %b Movement speed
-          %td.data
-            %span.stat.movement-speed{ data: { "movement-speed" => @champion.movement_speed } }= @champion.movement_speed
-
-        %tr
-          %td 
-            %b Health+/lvl
-          %td.data
-            %span.stat.health-per-lvl= @champion.health_per_lvl 
-                
-          %td 
-            %b Attack+/lvl
-          %td.data
-            %span.stat.attack-per-lvl= @champion.attack_per_lvl 
-
-          %td 
-            %b Range
-          %td.data
-            %span.stat.range= @champion.range
-        
-        %tr
-          %td 
-            %b Health+(5s)
-          %td.data        
-            %span.stat.health-regeneration{ data: { "health-regeneration" => @champion.health_regen_base } }= @champion.health_regen_base
-            %span.extra#health-regeneration{ data: { extra_acumulation:  0 } } (+0)
-            
-          %td 
-            %b Attack speed
-          %td.data
-            %span.stat.attack-speed{ data: { "attack-speed" => @champion.attack_speed_base } }= "#{@champion.attack_speed_base }"         
-            %span.extra#attack-speed{ data: { extra_acumulation: 0 } } (+0)
-            
-          %td 
-            %b Crit. chance(%)
-          %td.data
-            %span.critical-strike-chance{ data: { "critical-strike-vamp" => 0.00 } } 0.00
-            %span.extra#critical-strike-chance{ data: { extra_acumulation:  0 } } (+0)
-    
-        %tr
-          %td 
-            %b Health+(5s)/lvl
-          %td.data
-            %span.stat.health-reg-lvl= @champion.health_regen_per_lvl
-          %td 
-            %b Att.speed/lvl(%)
-          %td.data
-            %span.stat.attack-speed-per-lvl= @champion.attack_speed_per_lvl
-          %td 
-            %b Spell vamp(%)
-          %td.data 
-            %span.stat.spell-vamp{ data: { "spell-vamp" => 0.00 } } 0.00
-            %span.extra#spell-vamp{ data: { extra_acumulation:  0 } } (+0)
-
-        %tr
-          %td 
-            %b Mana
-          %td.data
-            %span.stat.mana{ data: { mana: @champion.mana_base + @champion.mana_per_lvl } }= "#{@champion.mana_base + @champion.mana_per_lvl}"         
-            %span.extra#mana{ data: { extra_acumulation: 0 } } (+0)
-            
-          
+            %span.stat.health{ data: { health: @champion.health_base + @champion.health_per_lvl } }= (@champion.health_base + @champion.health_per_lvl).round(2)
+            %span.extra#health{ data: { extra_acumulation:  0 } } (+0) =
+            %span.total.health= @champion.health_base + @champion.health_per_lvl
           %td
             %b Armor
           %td.data
-            %span.stat.armor{ data: { armor: @champion.armor_base + @champion.armor_per_lvl } }= "#{@champion.armor_base + @champion.armor_per_lvl}"
-            %span.extra#armor{ data: { extra_acumulation:  0 } } (+0)
-            
+            %span.stat.armor{ data: { armor: @champion.armor_base + @champion.armor_per_lvl } }= (@champion.armor_base + @champion.armor_per_lvl).round(2)
+            %span.extra#armor{ data: { extra_acumulation:  0 } } (+0) = 
+            %span.total.armor= @champion.armor_base + @champion.armor_per_lvl
           %td 
             %b Life steal(%)
           %td.data 
             %span.stat.life-steal{ data: { "life-steal" => 0.00 } } 0.00
-            %span.extra#life-steal{ data: { extra_acumulation:  0 } } (+0)
+            %span.extra#life-steal{ data: { extra_acumulation:  0 } } (+0) =
+            %span.total.life-steal 0.00
 
         %tr
           %td 
-            %b Mana+/lvl
-          %td.data
-            %span.stat.mana-per-lvl= @champion.mana_per_lvl
-          %td 
-            %b Armor+/lvl
-          %td.data
-            %span.stat.armor-per-lvl= @champion.armor_per_lvl 
-          %td 
-            %b Ability power
-          %td.data
-            %span.stat.ability-power{ data: { extra_acumulation: 0.00 } } 0.00
-            %span.extra#ability-power{ data: { extra_acumulation:  0 } } (+0)
+            %b Health+(5s)
+          %td.data        
+            %span.stat.health-regeneration{ data: { "health-regeneration" => @champion.health_regen_base } }= @champion.health_regen_base.round(2)
+            %span.extra#health-regeneration{ data: { extra_acumulation:  0 } } (+0) =
+            %span.total.health-regeneration= @champion.health_regen_base
 
+          %td 
+            %b Magic resist
+          %td.data
+            %span.stat.magic-resistance{ data: { 'magic-resistance' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= (@champion.magic_resist_base + @champion.magic_resist_per_level).round(2)
+            %span.extra#magic-resistance{ data: { extra_acumulation:  0 } } (+0) = 
+            %span.total.magic-resistance= @champion.magic_resist_base + @champion.magic_resist_per_level
+          %td 
+            %b Crit. chance(%)
+          %td.data
+            %span.stat.critical-strike-chance{ data: { "critical-strike-vamp" => 0.00 } } 0.00
+            %span.extra#critical-strike-chance{ data: { extra_acumulation:  0 } } (+0) =
+            %span.total.critical-strike-chance 0.00
+        
+        %tr
+          %td 
+            %b Mana
+          %td.data
+            %span.stat.mana{ data: { mana: @champion.mana_base + @champion.mana_per_lvl } }= @champion.mana_base + @champion.mana_per_lvl       
+            %span.extra#mana{ data: { extra_acumulation: 0 } } (+0) =
+            %span.total.mana= @champion.mana_base + @champion.mana_per_lvl
+          %td 
+            %b Attack
+          %td.data
+            %span.stat.attack-damage{ data: { "attack-damage" => @champion.attack_base + @champion.attack_per_lvl } }= (@champion.attack_base + @champion.attack_per_lvl).round(2)
+            %span.extra#attack-damage{ data: { extra_acumulation:  0 } } (+0) = 
+            %span.total.attack-damage= @champion.attack_base + @champion.attack_per_lvl
+          %td 
+            %b Spell vamp(%)
+          %td.data 
+            %span.stat.spell-vamp{ data: { "spell-vamp" => 0.00 } } 0.00
+            %span.extra#spell-vamp{ data: { extra_acumulation:  0 } } (+0) =
+            %span.total.spell-vamp= 0.00
 
         %tr
           %td 
             %b Mana+(5s)
           %td.data
-            %span.stat.mana-regeneration{ data: { "mana-regeneration" => @champion.mana_regen_base } }= @champion.mana_regen_base         
-            %span.extra#mana-regeneration{ data: { extra_acumulation: 0 } } (+0)
-            
+            %span.stat.mana-regeneration{ data: { "mana-regeneration" => @champion.mana_regen_base } }= @champion.mana_regen_base.round(2)         
+            %span.extra#mana-regeneration{ data: { extra_acumulation: 0 } } (+0) =
+            %span.total.mana-regeneration= @champion.mana_regen_base
           %td 
-            %b Magic resist
+            %b Attack speed
           %td.data
-            %span.stat.magic-resistance{ data: { 'magic-resistance' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= "#{@champion.magic_resist_base + @champion.magic_resist_per_level}"  
-            %span.extra#magic-resistance{ data: { extra_acumulation:  0 } } (+0)
+            %span.stat.attack-speed{ data: { "attack-speed" => @champion.attack_speed_base } }= @champion.attack_speed_base.round(2)    
+            %span.extra#attack-speed{ data: { extra_acumulation: 0 } } (+0) = 
+            %span.total.attack-speed= @champion.attack_speed_base
           %td 
             %b CD reduction
           %td.data
-            %span.stat.cooldown-reduction{ data: { 'cooldown-reduction' => 0 } }= 0
-            %span.extra#cooldown-reduction{ data: { extra_acumulation:  0 } } (+0)
-            
-
+            %span.stat.cooldown-reduction{ data: { 'cooldown-reduction' => 0 } }= 0.00
+            %span.extra#cooldown-reduction{ data: { extra_acumulation:  0 } } (+0) =
+            %span.total.cooldown-reduction 0.00
         %tr
           %td 
-            %b Mana+(5s)/lvl
+            %b Movement speed
           %td.data
-            %span.stat.mana-regen-per-lvl= @champion.mana_regen_per_lvl
+            %span.stat.movement-speed{ data: { "movement-speed" => @champion.movement_speed } }= @champion.movement_speed.round(2)
+            %span.extra#movement-speed{ data: { extra_acumulation:  0 } } (+0) =
+            %span.total.movement-speed= @champion.movement_speed
           %td 
-            %b Magic resist./lvl
+            %b Ability power
           %td.data
-            %span.stat.magic-resist-per-lvl= @champion.magic_resist_per_level
+            %span.stat.ability-power{ data: { extra_acumulation: 0.00 } } 0.00
+            %span.extra#ability-power{ data: { extra_acumulation:  0 } } (+0) =
+            %span.total.ability-power 0.00
+          %td 
+            %b Range
+          %td.data
+            %span.stat.range= @champion.range
+
+    .data.hidden
+      .stat.health-per-lvl= @champion.health_per_lvl 
+      .stat.attack-per-lvl= @champion.attack_per_lvl 
+      .stat.health-reg-lvl= @champion.health_regen_per_lvl
+      .stat.attack-speed-per-lvl= @champion.attack_speed_per_lvl
+      .stat.mana-per-lvl= @champion.mana_per_lvl
+      .stat.armor-per-lvl= @champion.armor_per_lvl 
+      .stat.mana-regen-per-lvl= @champion.mana_regen_per_lvl
+      .stat.magic-resist-per-lvl= @champion.magic_resist_per_level
+
     .level-form.stats(style="margin-top:20px")
       %p
         %b Level 
@@ -172,6 +148,8 @@
 .items.text-center
   = render 'items/items'
 
-= link_to 'Edit', edit_champion_path(@champion) |
+= link_to 'Edit', edit_champion_path(@champion) if current_user.admin
+| 
 = link_to 'Back', champions_path 
-= link_to 'Delete', @champion, method: :delete, data: { confirm: 'Are you sure?' } 
+= link_to 'Delete', @champion, method: :delete, data: { confirm: 'Are you sure?' } if current_user.admin
+

@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  load_and_authorize_resource except: [:index, :show]
+
   # GET /items
   # GET /items.json
   def index

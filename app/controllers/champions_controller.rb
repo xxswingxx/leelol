@@ -1,6 +1,5 @@
 class ChampionsController < ApplicationController
-  layout 'application'
-
+  load_and_authorize_resource except: [:index, :show]
   respond_to :html
   respond_to :json
 

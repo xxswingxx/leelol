@@ -1,5 +1,7 @@
 .title
-  %h1 Champions
+  %h1
+    = image_tag('influence-points.png')
+    Champions
 
 .champions-list.text-center
   - @champions.each do |champion|
@@ -9,5 +11,6 @@
 
   %br
 
-= link_to 'New Champion', new_champion_path
-= link_to 'Retrieve Data', retrieve_data_champions_path
+- if current_user.admin
+  = link_to 'New Champion', new_champion_path
+  = link_to 'Retrieve Data', retrieve_data_champions_path 

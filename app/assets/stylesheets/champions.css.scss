@@ -44,13 +44,21 @@
       float: left;
       table {
         td.data {
-          color: green;
           align: right !important;
           margin: 20px;
           .extra{
-            color: blue
+            color: blue;
+          }
+          .total{
+            color: green;
           }
         }
+      }
+      .level-form.stats{
+        text-align: left;
+      }
+      .hidden{
+        display: none;
       }
     }
   }
