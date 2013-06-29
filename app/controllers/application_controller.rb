@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   layout :layout_by_resource 
 
+  private
   def layout_by_resource 
     if params[:controller] =~ /devise/
       "users" 

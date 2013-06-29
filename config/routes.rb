@@ -1,6 +1,10 @@
 Leelol::Application.routes.draw do
 
-  devise_for :users, :controllers => {:registrations => "users/registrations", :passwords => "users/passwords"}
+  devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
+
+  resources :users do
+    resources :tokens, only: [:create, :destroy]
+  end
 
   resources :items do
     get '/retrieve_items', on: :collection, to: 'items#retrieve_items', as: :retrieve
@@ -10,6 +14,15 @@ Leelol::Application.routes.draw do
     get '/retrieve_data', on: :collection, to: 'champions#retrieve_data', as: :retrieve_data
   end
 
+  namespace :api do
+    namespace :v1 do
+      match '/ping' => 'base#ping'           
+      resources :champions
+      resources :items
+      match 'v:api/*path', to: redirect('/api/v1/%{path}')
+      match '*path', to: redirect('/api/v1/%{path}')
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

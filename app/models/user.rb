@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :title, :body
