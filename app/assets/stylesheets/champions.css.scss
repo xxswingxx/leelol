@@ -46,11 +46,12 @@
         td.data {
           align: right !important;
           margin: 20px;
+          color: green;
           .extra{
             color: blue;
           }
           .total{
-            color: green;
+            color: red;
           }
         }
       }

@@ -22,7 +22,6 @@
 
 
 %br
-
 - if current_user.admin
   = link_to 'New Item', new_item_path
-  = link_to 'Retrieve items', retrieve_items_path if Item.all.empty?
+  = link_to 'Retrieve items', retrieve_items_path

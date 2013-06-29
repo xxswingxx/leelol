@@ -27,6 +27,10 @@ class Item < ActiveRecord::Base
       # Has spell vamp?
       spell_vamp =  item_stats[3].scan(/(\d+)% Spell Vamp/).flatten.first
       stats.merge!(spell_vamp: spell_vamp) if spell_vamp.present?
+      
+      # Has cooldown reduction?
+      cooldown_reduction = item_stats[3].scan(/(\d+)% Cooldown Reduction/).flatten.first
+      stats.merge!(cooldown_reduction: cooldown_reduction) if cooldown_reduction.present?
 
       desc.flatten.each do |stat|
         value = stat.scan(/\d+/).flatten.first

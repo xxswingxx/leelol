@@ -1,6 +1,6 @@
 Leelol::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "users/registrations", :passwords => "users/passwords"}
 
   resources :items do
     get '/retrieve_items', on: :collection, to: 'items#retrieve_items', as: :retrieve
