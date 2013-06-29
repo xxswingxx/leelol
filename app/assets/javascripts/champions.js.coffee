@@ -6,7 +6,9 @@ window.onload = ->
   calculateTotal = (name) ->
     base = parseFloat($(".stat.#{name}").html())
     extra = parseFloat($(".extra##{name}").data('extraAcumulation'))
-    $(".total.#{name}").html(base + extra)
+    total = base + extra
+    total = 2.50 if total > 2.5 && name == 'attack-speed'
+    $(".total.#{name}").html(total.toFixed(2))
 
   keyToClass = (key) ->
     key.replace /[A-Z]/g, (match) ->
@@ -18,9 +20,10 @@ window.onload = ->
     for i in [0...keys.length]
       className = keyToClass(keys[i])
       diff = parseFloat object[keys[i]]
+      diff = diff * 0.01 if className == 'attack-speed'
       diff = diff * -1 if !inc
 
-      extra = parseFloat($(".extra##{className}").data('extraAcumulation')) + diff
+      extra = parseFloat($(".extra##{className}").data('extraAcumulation')) + diff  
       $(".extra##{className}").data('extraAcumulation', extra)
       $(".extra##{className}").html("(+#{extra}) = ")
       calculateTotal(className)

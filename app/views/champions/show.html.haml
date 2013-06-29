@@ -34,13 +34,13 @@
           %td.data 
             %span.stat.health{ data: { health: @champion.health_base + @champion.health_per_lvl } }= (@champion.health_base + @champion.health_per_lvl).round(2)
             %span.extra#health{ data: { extra_acumulation:  0 } } (+0) =
-            %span.total.health= @champion.health_base + @champion.health_per_lvl
+            %span.total.health= (@champion.health_base + @champion.health_per_lvl).round(2)
           %td
             %b Armor
           %td.data
             %span.stat.armor{ data: { armor: @champion.armor_base + @champion.armor_per_lvl } }= (@champion.armor_base + @champion.armor_per_lvl).round(2)
             %span.extra#armor{ data: { extra_acumulation:  0 } } (+0) = 
-            %span.total.armor= @champion.armor_base + @champion.armor_per_lvl
+            %span.total.armor= (@champion.armor_base + @champion.armor_per_lvl).round(2)
           %td 
             %b Life steal(%)
           %td.data 
@@ -54,14 +54,14 @@
           %td.data        
             %span.stat.health-regeneration{ data: { "health-regeneration" => @champion.health_regen_base } }= @champion.health_regen_base.round(2)
             %span.extra#health-regeneration{ data: { extra_acumulation:  0 } } (+0) =
-            %span.total.health-regeneration= @champion.health_regen_base
+            %span.total.health-regeneration= @champion.health_regen_base.round(2)
 
           %td 
             %b Magic resist
           %td.data
             %span.stat.magic-resistance{ data: { 'magic-resistance' => @champion.magic_resist_base + @champion.magic_resist_per_level} }= (@champion.magic_resist_base + @champion.magic_resist_per_level).round(2)
             %span.extra#magic-resistance{ data: { extra_acumulation:  0 } } (+0) = 
-            %span.total.magic-resistance= @champion.magic_resist_base + @champion.magic_resist_per_level
+            %span.total.magic-resistance= (@champion.magic_resist_base + @champion.magic_resist_per_level).round(2)
           %td 
             %b Crit. chance(%)
           %td.data
@@ -75,13 +75,13 @@
           %td.data
             %span.stat.mana{ data: { mana: @champion.mana_base + @champion.mana_per_lvl } }= @champion.mana_base + @champion.mana_per_lvl       
             %span.extra#mana{ data: { extra_acumulation: 0 } } (+0) =
-            %span.total.mana= @champion.mana_base + @champion.mana_per_lvl
+            %span.total.mana= (@champion.mana_base + @champion.mana_per_lvl).round(2)
           %td 
             %b Attack
           %td.data
-            %span.stat.attack-damage{ data: { "attack-damage" => @champion.attack_base + @champion.attack_per_lvl } }= (@champion.attack_base + @champion.attack_per_lvl).round(2)
+            %span.stat.attack-damage{ data: { "attack-damage" => @champion.attack_base + @champion.attack_per_lvl } }= (@champion.attack_base + @champion.attack_per_lvl).round(2).round(2)
             %span.extra#attack-damage{ data: { extra_acumulation:  0 } } (+0) = 
-            %span.total.attack-damage= @champion.attack_base + @champion.attack_per_lvl
+            %span.total.attack-damage= (@champion.attack_base + @champion.attack_per_lvl).round(2)
           %td 
             %b Spell vamp(%)
           %td.data 
@@ -95,13 +95,13 @@
           %td.data
             %span.stat.mana-regeneration{ data: { "mana-regeneration" => @champion.mana_regen_base } }= @champion.mana_regen_base.round(2)         
             %span.extra#mana-regeneration{ data: { extra_acumulation: 0 } } (+0) =
-            %span.total.mana-regeneration= @champion.mana_regen_base
+            %span.total.mana-regeneration= @champion.mana_regen_base.round(2)
           %td 
             %b Attack speed
           %td.data
             %span.stat.attack-speed{ data: { "attack-speed" => @champion.attack_speed_base } }= @champion.attack_speed_base.round(2)    
             %span.extra#attack-speed{ data: { extra_acumulation: 0 } } (+0) = 
-            %span.total.attack-speed= @champion.attack_speed_base
+            %span.total.attack-speed= @champion.attack_speed_base.round(2)
           %td 
             %b CD reduction
           %td.data
@@ -114,7 +114,7 @@
           %td.data
             %span.stat.movement-speed{ data: { "movement-speed" => @champion.movement_speed } }= @champion.movement_speed.round(2)
             %span.extra#movement-speed{ data: { extra_acumulation:  0 } } (+0) =
-            %span.total.movement-speed= @champion.movement_speed
+            %span.total.movement-speed= @champion.movement_speed.round(2)
           %td 
             %b Ability power
           %td.data
