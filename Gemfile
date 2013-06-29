@@ -19,10 +19,11 @@ group :development do
 end
 
 group :production do
-	gem 'unicorn'
+  gem 'unicorn'
 end
 
 gem 'cancan'
+gem 'capistrano'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'carrierwave'
 gem 'devise'

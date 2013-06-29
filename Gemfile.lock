@@ -34,6 +34,12 @@ GEM
       sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
+    capistrano (2.15.4)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -71,6 +77,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    highline (1.6.19)
     hike (1.2.3)
     i18n (0.6.1)
     jbuilder (1.4.2)
@@ -89,6 +96,13 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     mysql2 (0.3.11)
+    net-scp (1.1.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.7)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
@@ -171,6 +185,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 2.3.2.0)
   cancan
+  capistrano
   carrierwave
   coffee-rails (~> 3.2.1)
   debugger
