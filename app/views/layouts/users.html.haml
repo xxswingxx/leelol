@@ -11,8 +11,7 @@
     = csrf_meta_tags
     = yield(:head)
   %body
-    %a(href="https://github.com/xxswingxx/leelol" class="classic_ribbon---top--left-green" style="z-index:9999")
-      Source on Github (ALPHA)
+    /= render 'layouts/ribbon'
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
         .container

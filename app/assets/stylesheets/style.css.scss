@@ -41,11 +41,25 @@ body {
     background-image: none;
     text-decoration: none;
     .brand {
-      color: #ddd;
+      text-shadow: none;
+      color: #fff;
       &:hover{
         color: #4ca7dc;
         text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
         text-decoration: none;
+      }
+      .state {
+        vertical-align: top;
+        font-size: .4em;
+        line-height: 1em;
+        text-align: center;
+        padding: 4px 10px;
+        position: relative;
+        line-height: 1em;
+        border-radius: 2px;
+        background-color: #e46323;
+        text-shadow: none;
+        color: #fff ;
       }
     }
   }
