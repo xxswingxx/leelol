@@ -45,10 +45,27 @@ OK, who doesn't know what a champion is?
     ...
   ]
 ```
+You can also filter the result by passing the parameter q like this:
+
+`GET 'api/v1/champions.json?q=twi'` will return the following json:
+
+
+```json
+  [
+    {
+      "id":96,
+      "name":"Twisted Fate"
+    },
+    {
+      "id":97,
+      "name":"Twitch"
+    }
+  ]
+```
 
 ## Get a single champion detailed information
 `GET 'api/v1/champions/champion_id'` will return the information about a single champion. For instance, let's get Aatrox stats:
-`GET 'api/v1/champions/1.json'`
+`GET 'api/v1/champions/1.json'` or `GET 'api/v1/champions/aatrox.json'`
 
 ```json
 {
@@ -109,6 +126,29 @@ The values returned are the items you can find in the in-game base store. Curren
   ...
 ]
 ```
+
+You can also filter the result by passing the parameter q like this:
+
+`GET 'api/v1/items.json?q=scpeter'` will return the following json:
+
+
+```json
+[
+  {
+    "id":1,
+    "name":"Abyssal Scepter"
+  },
+  {
+    "id":173,
+    "name":"Rylai's Crystal Scepter"
+  },
+  {
+    "id":216,
+    "name":"Vampiric Scepter"
+  }
+]
+```
+
 ## Get a single item detailed information
 `GET 'api/v1/items/champion_id'` will return the information about a single champion. For instance, let's get the Archangel's Staff stats:
 `GET 'api/v1/items/4.json'`
