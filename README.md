@@ -1,6 +1,6 @@
 # Leelol
 
-Leelol is designed to work as an unofficial API for League of Legends due to the lack of a public official one. 
+Leelol is designed to work as an unofficial API for League of Legends ~~ due to the lack of a public official one ~~. 
 Our source data are the [League of Legends  Wiki](http://leagueoflegends.wikia.com/wiki/Base_champion_statistics) and [Mobafire](http://mobafire.com/league-of-legends/). The app is currently hosted at heroku: [http://leelol.herokuapp.com]()
 
 # Status (29/06/2013)
