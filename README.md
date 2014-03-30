@@ -1,12 +1,12 @@
 # Leelol
 
 Leelol is designed to work as an unofficial API for League of Legends due to the lack of a public official one. 
-Our source data are the [League of Legends  Wiki](http://leagueoflegends.wikia.com/wiki/Base_champion_statistics) and [Mobafire](http://mobafire.com/league-of-legends/).
+Our source data are the [League of Legends  Wiki](http://leagueoflegends.wikia.com/wiki/Base_champion_statistics) and [Mobafire](http://mobafire.com/league-of-legends/). The app is currently hosted at heroku: [http://leelol.herokuapp.com]()
 
 # Status (29/06/2013)
 The main point of the app is currently up. Example request with curl
 ```shell
-curl -u authentication_token:pass -X GET 'https://localhost:3000/api/v1/champions.json'
+curl -u authentication_token:pass -X GET 'https://leelol.herokuapp.com/api/v1/champions.json'
 ```
 The api only responds to json, so make sure your requests are in this format.
 
