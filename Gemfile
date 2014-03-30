@@ -19,6 +19,7 @@ group :development do
   gem 'haml-rails' 
 end
 
+gem 'fork_ribs'
 gem 'pg'
 gem 'rails_12factor'
 gem 'activerecord-postgresql-adapter'

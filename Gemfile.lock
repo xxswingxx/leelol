@@ -72,6 +72,8 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     facter (1.6.18)
+    fork_ribs (0.0.7)
+      rails (> 3, < 5)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -192,6 +194,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   devise
+  fork_ribs
   haml
   haml-rails
   jbuilder

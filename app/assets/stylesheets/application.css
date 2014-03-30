@@ -11,4 +11,5 @@
  *= require_self
  *= require vendor
  *= require_tree .
+ *= require fork_ribs  
  */
