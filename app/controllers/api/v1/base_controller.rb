@@ -5,4 +5,9 @@ class Api::V1::BaseController < ApplicationController
   def ping
     respond_with({ :status => 'OK' })
   end
+
+  protected
+  def is_number?(string)
+    true if Float(string) rescue false
+  end
 end
