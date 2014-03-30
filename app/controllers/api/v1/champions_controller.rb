@@ -11,7 +11,7 @@ class Api::V1::ChampionsController < Api::V1::BaseController
     if @champion
       respond_with(@champion)
     else
-      render json: { error: 'Cannot find champions with that ID/name'}, status: 404
+      render json: { error: 'Cannot find any champion with that ID/name'}, status: 404
     end
   end
 end
