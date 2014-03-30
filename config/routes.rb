@@ -17,8 +17,8 @@ Leelol::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       match '/ping' => 'base#ping'           
-      resources :champions
-      resources :items
+      resources :champions, only: [:index, :show]
+      resources :items, only: [:index, :show]
       match 'v:api/*path', to: redirect('/api/v1/%{path}')
       match '*path', to: redirect('/api/v1/%{path}')
     end
