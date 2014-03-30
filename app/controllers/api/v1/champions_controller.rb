@@ -7,8 +7,7 @@ class Api::V1::ChampionsController < Api::V1::BaseController
   end
 
   def show
-    @champion = is_number?(params[:id]) ? Champion.find(params[:id]) : Champion.find_by_name(params[:id].downcase.capitalize)
-    if @champion
+    if @champion = Champion.find_by_id(params[:id])
       respond_with(@champion)
     else
       render json: { error: 'Cannot find any champion with that ID/name'}, status: 404

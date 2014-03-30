@@ -65,7 +65,7 @@ You can also filter the result by passing the parameter q like this:
 
 ## Get a single champion detailed information
 `GET 'api/v1/champions/champion_id'` will return the information about a single champion. For instance, let's get Aatrox stats:
-`GET 'api/v1/champions/1.json'` or `GET 'api/v1/champions/aatrox.json'`
+`GET 'api/v1/champions/1.json'`
 
 ```json
 {
@@ -150,7 +150,7 @@ You can also filter the result by passing the parameter q like this:
 ```
 
 ## Get a single item detailed information
-`GET 'api/v1/items/champion_id'` will return the information about a single champion. For instance, let's get the Archangel's Staff stats:
+`GET 'api/v1/items/champion_id'` will return the information about a single item. For instance, let's get the Archangel's Staff stats:
 `GET 'api/v1/items/4.json'`
 
 ```json

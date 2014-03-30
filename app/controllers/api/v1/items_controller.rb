@@ -7,8 +7,7 @@ class Api::V1::ItemsController < Api::V1::BaseController
   end
 
   def show
-    @item = is_number?(params[:id]) ? Item.find(params[:id]) : Item.find_by_name(params[:id].downcase.capitalize)
-    if @item
+    if @item = Item.find_by_id(params[:id])
       respond_with(@item)
     else
       render json: { error: 'Cannot find any item with that ID/name'}, status: 404
