@@ -10,6 +10,8 @@ curl -u authentication_token:pass -X GET 'https://leelol.herokuapp.com/api/v1/ch
 ```
 The api only responds to json, so make sure your requests are in this format.
 
+**EDIT:** As you may know Riot released a public API a couple of months ago, leaving this project outdated. I'll just keep this up to date with didactic purposes. 
+
 ## Where is my token?
 In order to work with the API, you will need an authentication token. To get yours, please visit the web side of the application and create an account. After that you will be able to generate a new token in your profile section.
 
