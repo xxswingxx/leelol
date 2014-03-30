@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130629141252) do
 
   create_table "items", :force => true do |t|
     t.string   "name"
-    t.string   "passive"
+    t.text     "passive"
     t.integer  "cost"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

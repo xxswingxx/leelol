@@ -9,7 +9,7 @@ class ChampionsRetriever
 
     i = 1
     html.at_css('table.wikitable.sortable').children()[1..length-1].each do |champion|
-      image = images.at_css('div.self-clear#browse-build').children()[i].children[1].get_attribute('src')
+      image = "http://www.mobafire.com#{images.at_css('div.self-clear#browse-build').children()[i].children[1].get_attribute('src')}"
       stats = Champion.parse(champion, image)
       champion_instance = Champion.find_or_initialize_by_name(stats[:name])
       champion_instance.update_attributes(stats)

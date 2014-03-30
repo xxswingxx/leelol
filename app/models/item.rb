@@ -11,7 +11,7 @@ class Item < ActiveRecord::Base
 
       # item_stats = { 0 => Name, 1 => Total price, 2 => Recipe price, 3 => Stats&descr }
 
-      image = item.at_css('img').get_attribute('src')
+      image = "http://www.mobafire.com#{item.at_css('img').get_attribute('src')}"
       name = item_stats[0].gsub('Classic Only', '').gsub('Dominion Only', '')
       cost = item_stats[1].split(': ').last
 

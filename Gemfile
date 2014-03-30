@@ -13,15 +13,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
 group :development do
   gem 'debugger'
   gem 'haml-rails' 
 end
 
-group :production do
-  gem 'unicorn'
-end
-
+gem 'pg'
+gem 'rails_12factor'
+gem 'activerecord-postgresql-adapter'
 gem 'cancan'
 gem 'capistrano'
 gem 'bootstrap-sass', '~> 2.3.2.0'
@@ -30,7 +30,6 @@ gem 'devise'
 gem 'haml'
 gem 'jbuilder'
 gem 'jquery-rails'
-gem 'mysql2'
 gem 'nokogiri'
 gem 'rails', '3.2.13'
 gem 'sidekiq'

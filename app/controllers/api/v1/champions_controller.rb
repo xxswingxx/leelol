@@ -1,4 +1,4 @@
-class Api::V1::ChampionsController < BaseController
+class Api::V1::ChampionsController < Api::V1::BaseController
   respond_to :json
 
   def index
