@@ -1,6 +1,7 @@
 *.gem
 *.rbc
 .bundle
+config/database.yml
 .config
 coverage
 InstalledFiles
